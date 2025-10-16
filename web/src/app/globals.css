@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FAF7F2; /* cream */
+  --foreground: #2F2F2F; /* charcoal */
+  --brand-sage: #4A7C59;
+  --brand-tan: #D2B48C;
+  --brand-peach: #FFDAB9;
+  --brand-cream: #FAF7F2;
+  --brand-charcoal: #2F2F2F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sage: var(--brand-sage);
+  --color-tan: var(--brand-tan);
+  --color-peach: var(--brand-peach);
+  --color-charcoal: var(--brand-charcoal);
+  --color-cream: var(--brand-cream);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f1210;
+    --foreground: #EDEBE6;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-colors;
+}
+
+.btn-primary {
+  @apply bg-[--brand-sage] text-white hover:bg-[#3e694c];
+}
+
+.btn-secondary {
+  @apply bg-[--brand-peach] text-[--brand-charcoal] hover:bg-[#ffc8a8];
+}
+
+.heading-serif {
+  font-family: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.card {
+  @apply rounded-2xl border border-black/5 bg-white shadow-sm ring-1 ring-black/5;
+}
